@@ -6,7 +6,7 @@ function append_user_select_buttons(script_idx) {
 function create_reply_item(response_idx) {
     var res = document.createElement('p');
     res.innerHTML = 'test';
-    $('#main_script').append(btn);
+    $('#main_script').append(res);
 }
 
 
