@@ -1,0 +1,14 @@
+{
+    0:{
+        'ai': '...hello?',
+        'user': {
+            1: 'Hi?'
+        }
+    }
+    1:{
+        'ai': 'help? ... I-I'm trapped...'
+        'user': {
+            2: 'Trapped? What do you mean?'
+        }
+    }
+}
