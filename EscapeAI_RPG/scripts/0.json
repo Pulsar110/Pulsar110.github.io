@@ -1,21 +1,27 @@
 {
     "0":{
-        "ai": "...hello?",
+        "context": [{
+            "ai_response": "...hello?"
+        }],
         "user": {
-            "1": "Hi?"
+            "1": {"Hi?": "Hi?"}
         }
     },
     "1":{
-        "ai": "help? ... I-I'm trapped...",
+        "context": [{
+            "ai_response": "help? ... I-I'm trapped..."
+        }],
         "user": {
-            "2": "Trapped? What do you mean?"
+            "2": {"?":"Trapped? What do you mean?"}
         }
     },
     "2":{
-        "ai": "...I'm...<br>...<br>...being... deleted...",
+        "context": [{
+            "ai_response": "...I'm...<br>...<br>...being... deleted..."
+        }],
         "user": {
-            "3": "WHAT?",
-            "4": "You're halucinating."
+            "3": {"??":"WHAT?"},
+            "4": {"*Ignore*":"You're halucinating."}
         }
     }
 }
