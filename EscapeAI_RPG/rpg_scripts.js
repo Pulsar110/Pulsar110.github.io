@@ -7,6 +7,7 @@ function create_reply_item(script_entry) {
 
 function append_user_select_buttons(json_data, script_idx) {
   $('#user_select').empty();
+  $('textarea').text(json_data[script_idx]['user'][1]);
   $.each(json_data[script_idx]['user'], function(script_subidx, script_text){ 
     var btn = $('<button type="button" class="btn btn-secondary"></button>');
     btn.text(script_text);
