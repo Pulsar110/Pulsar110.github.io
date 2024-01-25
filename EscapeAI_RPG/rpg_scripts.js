@@ -8,7 +8,9 @@ $(document).ready(function(){
 
   $.fn.create_context_item = function(context) {
     $.each(context, function(idx, c){
+      $('body').append(idx);
       $.each(c, function(res_type, response){
+        $('body').append(res_type);
         var res = $('<p></p>').text(response);
         res.addClass(res_type);
         $('#main_script').append(res);
