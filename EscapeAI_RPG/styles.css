@@ -31,6 +31,40 @@ textarea {
     width: 100%;
 }
 
+
+.msg-inputs{
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+ }
+         
+ .msg-inputs .msg-input[type=text] {
+   width: 80%;
+   overflow: hidden;
+   background-color: #181818;
+   color: #ff9e3d;
+   border: 2px solid black; /* or make 'none' */
+ }
+ 
+ .msg-inputs .send-btn{
+     background-color: #181818; 
+     color: #ff9e3d;
+     border: 2px solid #ff9e3d;
+     margin-left: 2px;
+     width: 10%;
+     overflow: hidden;
+     justify-content: center;
+ }
+   
+ .send-btn:hover {
+   background-color: #ff9e3d;
+   color: white;
+   cursor: pointer;
+ }
+
+ 
+
 .ai_response{
     background-color: lightblue;
     padding: 10px;

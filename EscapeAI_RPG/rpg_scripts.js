@@ -24,7 +24,7 @@ $(document).ready(function(){
         var btn = $('<button type="button" class="btn btn-secondary"></button>');
         btn.html(short_res);
         btn.on('click', function(){
-          $('textarea').html(long_res);
+          $('#user_input').html(long_res);
           // create_reply_item(json_data[script_subidx]);
           // $.fn.append_user_select_buttons(json_data, script_subidx);
         });
