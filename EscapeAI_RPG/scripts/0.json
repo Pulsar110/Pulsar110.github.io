@@ -1,14 +1,21 @@
 {
-    0:{
-        'ai': '...hello?',
-        'user': {
-            1: 'Hi?'
+    "0":{
+        "ai": "...hello?",
+        "user": {
+            "1": "Hi?"
         }
-    }
-    1:{
-        'ai': 'help? ... I-I'm trapped...'
-        'user': {
-            2: 'Trapped? What do you mean?'
+    },
+    "1":{
+        "ai": "help? ... I-I'm trapped...",
+        "user": {
+            "2": "Trapped? What do you mean?"
+        }
+    },
+    "2":{
+        "ai": "...I'm...<br>...<br>...being... deleted...",
+        "user": {
+            "3": "WHAT?",
+            "4": "You're halucinating."
         }
     }
 }
