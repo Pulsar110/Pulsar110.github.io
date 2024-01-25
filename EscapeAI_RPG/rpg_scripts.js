@@ -7,9 +7,9 @@ $(document).ready(function(){
   }
 
   $.fn.create_context_item = function(context) {
-    $.each(context, function(idx, c){
-      $('body').append(idx);
-      $.each(c, function(res_type, response){
+    context.each(function(idx, c){
+      $('body').append('hahahha~');
+      c.each(function(res_type, response){
         $('body').append(res_type);
         var res = $('<p></p>').text(response);
         res.addClass(res_type);
@@ -21,7 +21,7 @@ $(document).ready(function(){
   $.fn.append_user_select_buttons = function(json_data, script_idx) {
     $('#user_select').empty();
     // $('textarea').html(json_data[script_idx]['user']["1"]);
-    $.each(json_data[script_idx]['user'], function(script_subidx, script_text){ 
+    json_data[script_idx]['user'].each(function(script_subidx, script_text){ 
       $.each(script_text, function(short_res, long_res){ 
         var btn = $('<button type="button" class="btn btn-secondary"></button>');
         btn.html(short_res);
