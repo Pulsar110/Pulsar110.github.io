@@ -1,9 +1,12 @@
 $(document).ready(function(){
   $('body').append('hahahha~');
 
-  $.fn.create_reply_item = function(user_response, context) {
+  $.fn.create_user_item = function(user_response) {
     var res = $('<p class="user_response"></p>').text(user_response);
     $('#main_script').append(res);
+  }
+
+  $.fn.create_context_item = function(context) {
     $.each(context, function(idx, c){
       $.each(c, function(res_type, response){
         var res = $('<p></p>').text(response);
@@ -32,7 +35,7 @@ $(document).ready(function(){
 
   $.getJSON('scripts/0.json', function(json_data) {
     $('body').append('hahahha~');
-    $.fn.create_reply_item(json_data["0"]);
+    $.fn.create_content_item(json_data["0"]["context"]);
     $.fn.append_user_select_buttons(json_data, "0");
   });
 });
