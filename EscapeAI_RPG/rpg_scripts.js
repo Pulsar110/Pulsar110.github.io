@@ -7,7 +7,7 @@ function create_reply_item(script_entry) {
 
 function append_user_select_buttons(json_data, script_idx) {
   $('#user_select').empty();
-  $('textarea').html(json_data[script_idx]['user'][1]);
+  $('textarea').html(json_data[script_idx]['user']["1"]);
   $.each(json_data[script_idx]['user'], function(script_subidx, script_text){ 
     var btn = $('<button type="button" class="btn btn-secondary"></button>');
     btn.html(script_text);
@@ -19,11 +19,11 @@ function append_user_select_buttons(json_data, script_idx) {
   });
 }
 
-
 $(document).ready(function(){
-  $.getJSON('./scripts/0.json', function(json_data) {
-    create_reply_item(json_data[0]);
-    append_user_select_buttons(json_data, 0);
+  $.getJSON('scripts/0.json', function(json_data) {
+    $('body').apend('hahahha~');
+    create_reply_item(json_data["0"]);
+    append_user_select_buttons(json_data, "0");
   });
 });
 
