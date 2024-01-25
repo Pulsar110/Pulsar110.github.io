@@ -20,8 +20,9 @@ function append_user_select_buttons(json_data, script_idx) {
 }
 
 $(document).ready(function(){
+  $('body').append('hahahha~');
   $.getJSON('scripts/0.json', function(json_data) {
-    $('body').apend('hahahha~');
+    $('body').append('hahahha~');
     create_reply_item(json_data["0"]);
     append_user_select_buttons(json_data, "0");
   });
