@@ -1,1 +1,241 @@
-HAHA!
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Previous styles remain the same until .floating-shapes */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(120deg, #0f0c29, #302b63, #24243e);
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header {
+            text-align: center;
+            position: relative;
+            padding: 2rem;
+        }
+
+        .profile-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+        }
+
+        .floating-shapes {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform-origin: center;
+            box-shadow: 0 0 50px currentColor;
+            animation: orbit 20s infinite linear;
+            opacity: 0.8;
+        }
+
+        .shape::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.4), transparent);
+        }
+
+        @keyframes orbit {
+            from {
+                transform: rotate(0deg) translateX(80px) rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg) translateX(80px) rotate(-360deg);
+            }
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #24243e;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+            z-index: 1;
+        }
+
+        .profile-pic:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        /* Rest of the previous styles remain the same */
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 1rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .social-button {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-button:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+        }
+
+        #mood-text {
+            font-style: italic;
+            color: #a0a0ff;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .stars {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -2;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    <div class="container">
+        <div class="header">
+            <div class="profile-container">
+                <div class="floating-shapes">
+                    <div class="shape" style="color: #4CA1AF; width: 20px; height: 20px; animation-duration: 15s;"></div>
+                    <div class="shape" style="color: #C779D0; width: 15px; height: 15px; animation-duration: 12s; animation-delay: -4s;"></div>
+                    <div class="shape" style="color: #4FACFE; width: 25px; height: 25px; animation-duration: 18s; animation-delay: -8s;"></div>
+                    <div class="shape" style="color: #A770EF; width: 18px; height: 18px; animation-duration: 20s; animation-delay: -12s;"></div>
+                </div>
+                <img src="/api/placeholder/150/150" alt="Profile Picture" class="profile-pic" onclick="changeMood()">
+            </div>
+            <h1>Hello, I'm [Your Name]!</h1>
+            <p id="mood-text">Exploring the cosmos of creativity ✨</p>
+        </div>
+
+        <div class="social-links">
+            <button class="social-button" onclick="alert('Connect with me on Twitter!')">Twitter</button>
+            <button class="social-button" onclick="alert('Check out my projects on GitHub!')">GitHub</button>
+            <button class="social-button" onclick="alert('Let\'s connect on LinkedIn!')">LinkedIn</button>
+        </div>
+
+        <div class="card">
+            <h2>About Me</h2>
+            <p>I'm an explorer of the digital cosmos, navigating through the vast universe of possibilities. When I'm not charting new territories in code, I'm contemplating the mysteries of technology and creativity.</p>
+        </div>
+
+        <div class="card">
+            <h2>What I Do</h2>
+            <p>Like a cosmic architect, I design and build digital constellations. Each project is a new star in my universe, contributing to an ever-expanding galaxy of innovations and ideas.</p>
+        </div>
+
+        <div class="card">
+            <h2>Fun Facts</h2>
+            <p>• My coffee mug has seen more midnight coding sessions than shooting stars<br>
+            • I believe semicolons are just cosmic punctuation marks<br>
+            • My debug sessions are like exploring black holes - mysterious yet fascinating</p>
+        </div>
+    </div>
+
+    <script>
+        const moods = [
+            "Exploring the cosmos of creativity ✨",
+            "Dancing with the stars tonight 🌟",
+            "Lost in the digital nebula 🌌",
+            "Navigating through code constellations 🚀",
+            "Dreaming in cosmic coordinates ⭐",
+            "Surfing on stardust waves 💫"
+        ];
+
+        function changeMood() {
+            const moodText = document.getElementById('mood-text');
+            const currentMood = moodText.textContent;
+            let newMood;
+            do {
+                newMood = moods[Math.floor(Math.random() * moods.length)];
+            } while (newMood === currentMood);
+            moodText.textContent = newMood;
+        }
+
+        // Create starry background
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 200; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.width = `${Math.random() * 2}px`;
+            star.style.height = star.style.width;
+            star.style.animationDelay = `${Math.random() * 3}s`;
+            starsContainer.appendChild(star);
+        }
+    </script>
+</body>
+</html>
